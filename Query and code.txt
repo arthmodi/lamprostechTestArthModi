@@ -1,0 +1,27 @@
+1. Write a query to find the average count of transactions per day on polygon.
+Data table: polygon.transactions
+
+SELECT
+  Avg(block_number) As Average_Transaction_Per_Day
+FROM polygon.transactions
+WHERE
+  
+  "success" = TRUE
+
+Insight - BY averaging the block number we get Average transactions per day by writing where success condition it will take only successful transactions
+
+
+
+2. Write a query to find the top 10 holders of OP tokens.
+Data table: op_token_distributions_optimism.transfer_mapping
+
+
+SELECT
+    to_address,
+    op_claimed As highest_op_TOKENS
+FROM op_token_distributions_optimism.transfer_mapping
+ORDER BY op_claimed Desc
+LIMIT 10
+
+
+insight - op_claimed group by highest and it will be the amount and to_addres will give you address
